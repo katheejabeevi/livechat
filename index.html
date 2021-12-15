@@ -1,34 +1,36 @@
-<div><input id=input placeholder="message" /></div>
-Chat Output
-<div id=box></div>
-<script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
-<script> (function () {
-        var pubnub = new PubNub({
-            publishKey: 'pub-c-6819b5d3-f90c-420f-bb39-5b993c86b03d',
-            subscribeKey: 'sub-c-3497bc7c-5bcf-11ec-b9bb-4ee50875e851'
-        });
-        function $(id) {
-            return document.getElementById(id);
+<head>
+    <style>
+        #div1 {
+            align-items: center;
+            top: 37%;
+            /* bottom: 48%; */
+            position: relative;
+            left: 9%;
         }
-        var box = $('box'),
-            input = $('input'),
-            channel = '10chat-demo';
-        pubnub.addListener({
-            message: function (obj) {
-                box.innerHTML = ('' + obj.message).replace(/[<>]/g, '') + '<br>' + box.innerHTML
-            }
-        });
-        pubnub.subscribe({
-            channels: [channel]
-        });
-        input.addEventListener('keyup', function (e) {
-            if ((e.keyCode || e.charCode) === 13) {
-                pubnub.publish({
-                    channel: channel,
-                    message: input.value,
-                    x: (input.value = '')
-                });
-            }
-        });
-    })();
-</script>
+
+        body {
+            background: url("honeywell.webp");
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+        <img src="honeywell.jpg" width="100%" height="35%%" alt="Natural" />
+    </marquee>
+    <div id="div1">
+        <embed type="text/html"
+            src="https://forms.office.com/Pages/AnalysisPage.aspx?id=JuXsln2csEiNr4uTyQpdGB0gnNfi0ZZLhFQQfJ03ns5URTVFWVpYQk1CM0VRT1IzMjdMQUpBR0hDMy4u&AnalyzerToken=ExTrklT2Zebl2oTOcILxHaxjgpgSGIaR"
+            width="400" height="200" style="overflow-y: hidden;">
+        <embed type="text/html"
+            src="https://forms.office.com/Pages/AnalysisPage.aspx?id=JuXsln2csEiNr4uTyQpdGB0gnNfi0ZZLhFQQfJ03ns5UMTRTNjZTNzA5MVZKMklBQ1Y4SlNCREtBTy4u&AnalyzerToken=4vfkD1OTGvPZcfvgGxUlFErifzhZHoj8"
+            width="400" height="200" style="overflow-y: hidden;">
+        <embed type="text/html"
+            src="https://forms.office.com/Pages/AnalysisPage.aspx?id=JuXsln2csEiNr4uTyQpdGB0gnNfi0ZZLhFQQfJ03ns5UREZSNU5ZVk04NjdJOURHNjFPQVJQUU41OS4u&AnalyzerToken=5V7SiAm1Iyh5U5fyEGhbZ8dJ13yd9Xj0"
+            width="400" height="200" style="overflow-y: hidden;">
+        <embed type="text/html"
+            src="https://forms.office.com/Pages/AnalysisPage.aspx?id=JuXsln2csEiNr4uTyQpdGB0gnNfi0ZZLhFQQfJ03ns5UNzFTODBMNjE3MU9GR1lHMjBOUzRSOTI5US4u&AnalyzerToken=s7q8ZHxw1TTr2uyHZmy1Hgqh9DsSCVhj"
+            width="400" height="200" style="overflow-y: hidden;">
+    </div>
+</body>
